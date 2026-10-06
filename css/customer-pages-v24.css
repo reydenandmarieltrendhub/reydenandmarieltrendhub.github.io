@@ -1,0 +1,209 @@
+/* Reyden & Mariel Trend Hub — customer pages V24 */
+.customer-page-main {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: 18px 16px 28px;
+}
+
+.customer-page-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 16px;
+  padding: 18px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #111827 0%, #263244 100%);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(17,24,39,.08);
+}
+.customer-page-hero span {
+  display: block;
+  margin-bottom: 5px;
+  color: #fbbf24;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.customer-page-hero h2 { margin: 0; font-size: 23px; letter-spacing: -.035em; }
+.customer-page-hero p { margin: 7px 0 0; color: #d1d5db; font-size: 12px; line-height: 1.5; }
+.customer-page-count {
+  flex: 0 0 auto;
+  min-width: 52px;
+  padding: 10px 11px;
+  border-radius: 15px;
+  background: rgba(255,255,255,.09);
+  text-align: center;
+}
+.customer-page-count strong { display:block; font-size: 20px; }
+.customer-page-count small { color:#d1d5db; font-size:9px; font-weight:800; text-transform:uppercase; }
+
+.customer-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding: 0 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(17,24,39,.04);
+}
+.customer-search svg { width:20px; height:20px; color:#9ca3af; }
+.customer-search input {
+  width: 100%;
+  padding: 13px 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #111827;
+  font-size: 14px;
+}
+
+.customer-categories {
+  display: flex;
+  gap: 9px;
+  overflow-x: auto;
+  margin: 0 -16px 16px;
+  padding: 0 16px 3px;
+  scrollbar-width: none;
+}
+.customer-categories::-webkit-scrollbar { display:none; }
+.customer-category {
+  flex: 0 0 auto;
+  padding: 9px 13px;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  background: #fff;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 800;
+}
+.customer-category.active { border-color:#111827; background:#111827; color:#fff; }
+
+.customer-product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px;
+}
+.customer-product-grid .product-card { min-width: 0; }
+
+.customer-empty {
+  display: grid;
+  justify-items: center;
+  padding: 42px 18px;
+  border: 1px dashed #d1d5db;
+  border-radius: 20px;
+  background: #fff;
+  text-align: center;
+}
+.customer-empty[hidden] { display:none !important; }
+.customer-empty-icon {
+  display:grid;
+  place-items:center;
+  width:58px;
+  height:58px;
+  margin-bottom:12px;
+  border-radius:18px;
+  background:#fff7e6;
+  color:#92400e;
+  font-size:28px;
+}
+.customer-empty h3 { margin:0; font-size:17px; }
+.customer-empty p { max-width:310px; margin:7px 0 14px; color:#6b7280; font-size:12px; line-height:1.55; }
+.customer-primary-link,
+.customer-secondary-link {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:0 15px;
+  border-radius:12px;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:900;
+}
+.customer-primary-link { background:#111827; color:#fff; }
+.customer-secondary-link { border:1px solid #e5e7eb; background:#fff; color:#111827; }
+
+.account-card {
+  margin-bottom: 14px;
+  padding: 17px;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 8px 22px rgba(17,24,39,.05);
+}
+.account-card-heading { margin-bottom:14px; }
+.account-card-heading span { color:#b45309; font-size:9px; font-weight:900; letter-spacing:.11em; text-transform:uppercase; }
+.account-card-heading h3 { margin:4px 0 0; font-size:18px; letter-spacing:-.025em; }
+.account-card-heading p { margin:6px 0 0; color:#6b7280; font-size:11px; line-height:1.5; }
+.account-field { display:block; margin-top:12px; }
+.account-field > span { display:block; margin-bottom:6px; color:#374151; font-size:11px; font-weight:800; }
+.account-field input {
+  width:100%;
+  padding:12px 13px;
+  border:1px solid #dbe0e7;
+  border-radius:12px;
+  outline:0;
+  background:#f9fafb;
+  color:#111827;
+  font-size:13px;
+}
+.account-field input:focus { border-color:#111827; background:#fff; }
+.account-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.account-actions { display:flex; gap:10px; margin-top:15px; }
+.account-actions button {
+  flex:1;
+  min-height:43px;
+  border-radius:12px;
+  font-size:12px;
+  font-weight:900;
+}
+.account-save { border:0; background:#111827; color:#fff; }
+.account-clear { border:1px solid #e5e7eb; background:#fff; color:#6b7280; }
+.account-quick-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+.account-quick-link {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:64px;
+  padding:12px;
+  border:1px solid #e5e7eb;
+  border-radius:15px;
+  background:#f9fafb;
+  color:#111827;
+  text-decoration:none;
+}
+.account-quick-link b { display:block; font-size:12px; }
+.account-quick-link small { display:block; margin-top:2px; color:#6b7280; font-size:9px; line-height:1.35; }
+.account-quick-icon { display:grid; place-items:center; flex:0 0 36px; width:36px; height:36px; border-radius:11px; background:#fff7e6; font-size:17px; }
+.account-device-note { margin:12px 0 0; color:#6b7280; font-size:10px; line-height:1.5; }
+
+.customer-page .bottom-nav .nav-item { text-decoration:none; }
+.customer-page-toast {
+  position: fixed;
+  right: 18px;
+  bottom: 88px;
+  left: 18px;
+  z-index: 60;
+  transform: translateY(18px);
+  padding: 12px 14px;
+  border-radius: 13px;
+  background: #111827;
+  color: #fff;
+  opacity: 0;
+  pointer-events:none;
+  text-align:center;
+  font-size:12px;
+  font-weight:800;
+  transition:.22s ease;
+}
+.customer-page-toast.show { opacity:1; transform:translateY(0); }
+
+[hidden] { display:none !important; }
+
+@media (min-width: 700px) {
+  .customer-product-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+}

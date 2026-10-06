@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="../">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" />
+  <title>Shop • Reyden & Mariel Trend Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=25" />
+  <link rel="stylesheet" href="css/customer-pages-v24.css?v=25" />
+  <link rel="stylesheet" href="css/shop-v25.css?v=25" />
+</head>
+<body class="customer-page shop-v25-page">
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-wrap"><div class="brand-mark">R&amp;M</div><div class="brand-copy"><h1>Reyden &amp; Mariel</h1><p>TREND HUB</p></div></div>
+      <button class="icon-button" data-shop-cart type="button" aria-label="Shopping cart"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.5L21 7H7"/><circle cx="10" cy="20" r="1.2"/><circle cx="18" cy="20" r="1.2"/></svg><span class="cart-badge">0</span></button>
+    </header>
+
+    <main class="customer-page-main shop-v25-main">
+      <section class="shop-v25-header">
+        <div>
+          <span>Catalog</span>
+          <h2>Shop all products</h2>
+          <p>Search the full catalog, filter availability, and sort by price.</p>
+        </div>
+        <div class="shop-v25-count"><strong id="shopResultCount">0</strong><small>shown</small></div>
+      </section>
+
+      <label class="shop-v25-search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+        <input id="shopSearchInput" type="search" placeholder="Search the catalog..." aria-label="Search products" />
+      </label>
+
+      <section class="shop-v25-controls" aria-label="Catalog controls">
+        <div class="shop-v25-stock-filters">
+          <button class="active" type="button" data-stock-filter="all">All</button>
+          <button type="button" data-stock-filter="ready">Ready Stock</button>
+          <button type="button" data-stock-filter="preorder">Pre-Order</button>
+        </div>
+        <label class="shop-v25-sort">Sort
+          <select id="shopSortSelect" aria-label="Sort products">
+            <option value="featured">Featured</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="name">Name A–Z</option>
+          </select>
+        </label>
+      </section>
+
+      <div class="customer-categories shop-v25-categories" aria-label="Product categories">
+        <button class="customer-category active" data-shop-category="all" type="button">All Categories</button>
+        <button class="customer-category" data-shop-category="fashion" type="button">Fashion</button>
+        <button class="customer-category" data-shop-category="gadgets" type="button">Gadgets</button>
+        <button class="customer-category" data-shop-category="home" type="button">Home</button>
+        <button class="customer-category" data-shop-category="beauty" type="button">Beauty</button>
+        <button class="customer-category" data-shop-category="accessories" type="button">Accessories</button>
+      </div>
+
+      <div class="shop-v25-result-line"><span id="shopResultLabel">All products</span><a href="saved/">View Saved</a></div>
+      <div id="shopProductGrid" class="customer-product-grid shop-v25-grid"></div>
+      <section id="shopEmpty" class="customer-empty" hidden><div class="customer-empty-icon">⌕</div><h3>No matching products</h3><p>Try changing the search, category, or availability filter.</p></section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a class="nav-item" href="index.html" aria-label="Home"><span class="nav-icon-wrap"><svg viewBox="0 0 24 24"><path d="m3 11 9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span><small>Home</small></a>
+      <a class="nav-item active" href="shop/" aria-label="Shop"><span class="nav-icon-wrap"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></span><small>Shop</small></a>
+      <a class="nav-item" href="saved/" aria-label="Saved"><span class="nav-icon-wrap"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></span><small>Saved</small></a>
+      <a class="nav-item" href="account/" aria-label="Account"><span class="nav-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><small>Account</small></a>
+    </nav>
+  </div>
+  <div id="shopToast" class="customer-page-toast" role="status" aria-live="polite"></div>
+  <script src="js/products.js?v=25"></script>
+  <script src="js/shop-v25.js?v=25"></script>
+</body>
+</html>

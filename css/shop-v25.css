@@ -1,0 +1,77 @@
+/* Reyden & Mariel Trend Hub — full catalog V25 */
+.shop-v25-main { padding-top: 16px; }
+.shop-v25-header {
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:14px;
+  margin-bottom:14px;
+  padding:18px;
+  border:1px solid #e5e7eb;
+  border-radius:20px;
+  background:#fff;
+  box-shadow:0 8px 22px rgba(17,24,39,.05);
+}
+.shop-v25-header span { display:block; margin-bottom:5px; color:#b45309; font-size:9px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
+.shop-v25-header h2 { margin:0; font-size:24px; letter-spacing:-.04em; }
+.shop-v25-header p { margin:6px 0 0; color:#6b7280; font-size:11px; line-height:1.5; }
+.shop-v25-count { flex:0 0 auto; min-width:56px; padding:10px; border-radius:14px; background:#f3f4f6; text-align:center; }
+.shop-v25-count strong { display:block; font-size:20px; }
+.shop-v25-count small { color:#6b7280; font-size:8px; font-weight:900; text-transform:uppercase; }
+.shop-v25-search {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:12px;
+  padding:0 14px;
+  border:1px solid #dbe0e7;
+  border-radius:15px;
+  background:#fff;
+}
+.shop-v25-search svg { width:20px; height:20px; color:#9ca3af; }
+.shop-v25-search input { width:100%; padding:13px 0; border:0; outline:0; background:transparent; font-size:14px; }
+.shop-v25-controls {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:13px;
+}
+.shop-v25-stock-filters { display:flex; gap:7px; overflow-x:auto; scrollbar-width:none; }
+.shop-v25-stock-filters::-webkit-scrollbar { display:none; }
+.shop-v25-stock-filters button {
+  flex:0 0 auto;
+  min-height:36px;
+  padding:0 11px;
+  border:1px solid #e5e7eb;
+  border-radius:11px;
+  background:#fff;
+  color:#475569;
+  font-size:9px;
+  font-weight:900;
+}
+.shop-v25-stock-filters button.active { border-color:#111827; background:#111827; color:#fff; }
+.shop-v25-sort { flex:0 0 auto; color:#6b7280; font-size:8px; font-weight:900; text-transform:uppercase; }
+.shop-v25-sort select {
+  display:block;
+  max-width:138px;
+  margin-top:4px;
+  padding:8px 28px 8px 9px;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  background:#fff;
+  color:#111827;
+  font-size:10px;
+  font-weight:800;
+}
+.shop-v25-categories { margin-bottom:12px; }
+.shop-v25-result-line { display:flex; align-items:center; justify-content:space-between; gap:10px; margin:0 1px 12px; color:#6b7280; font-size:10px; font-weight:800; }
+.shop-v25-result-line a { color:#92400e; text-decoration:none; font-weight:900; }
+.shop-v25-grid { gap:11px; }
+.shop-v25-grid .product-card { border-radius:16px; box-shadow:0 5px 16px rgba(17,24,39,.045); }
+.shop-v25-grid .product-info { padding:10px; }
+.shop-v25-grid .product-info h4 { font-size:12px; }
+.shop-v25-grid .add-btn { min-height:35px; font-size:9px; }
+@media (min-width:700px) {
+  .shop-v25-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}

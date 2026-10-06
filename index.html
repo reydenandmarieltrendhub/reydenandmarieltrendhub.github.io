@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/home-notices-v23.css?v=23" />
+  <link rel="stylesheet" href="css/home-v25.css?v=25" />
 </head>
 <body>
   <div class="app-shell">
@@ -38,7 +39,7 @@
           <span class="eyebrow">TRENDING NOW</span>
           <h2>Affordable finds for everyday life.</h2>
           <p>Trending finds. Sulit prices.</p>
-          <button class="hero-button" type="button">Shop New Finds</button>
+          <button class="hero-button" type="button">Shop All Products</button>
         </div>
         <div class="hero-orb" aria-hidden="true"></div>
       </section>
@@ -75,76 +76,30 @@
       </section>
       <!-- /RM home notices v23 -->
 
-      <section class="search-section">
-        <div class="search-box">
-          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="11" cy="11" r="6.5"/>
-            <path d="m16 16 4 4"/>
-          </svg>
-          <input id="searchInput" type="search" placeholder="Search products..." aria-label="Search products" />
+            <!-- RM Home Discovery V25 -->
+      <section class="home-v25-section">
+        <div class="home-v25-heading">
+          <div><span>Featured today</span><h3>Handpicked finds</h3></div>
+          <a href="shop/">Shop all →</a>
         </div>
+        <div id="homeFeaturedGridV25" class="home-featured-v25"></div>
       </section>
 
-      <section class="section category-section">
-        <div class="section-heading">
-          <div>
-            <span class="section-kicker">Browse</span>
-            <h3>Categories</h3>
-          </div>
-        </div>
+      <section id="homePreorderV25" class="home-preorder-v25" aria-label="Pre-order spotlight"></section>
 
-        <div class="categories" id="categoryScroller">
-          <button class="category active" data-category="all" type="button">
-            <span class="category-icon">✦</span>
-            <small>All</small>
-          </button>
-          <button class="category" data-category="fashion" type="button">
-            <span class="category-icon">👟</span>
-            <small>Fashion</small>
-          </button>
-          <button class="category" data-category="gadgets" type="button">
-            <span class="category-icon">🎧</span>
-            <small>Gadgets</small>
-          </button>
-          <button class="category" data-category="home" type="button">
-            <span class="category-icon">⌂</span>
-            <small>Home</small>
-          </button>
-          <button class="category" data-category="beauty" type="button">
-            <span class="category-icon">✿</span>
-            <small>Beauty</small>
-          </button>
-          <button class="category" data-category="accessories" type="button">
-            <span class="category-icon">👜</span>
-            <small>Accessories</small>
-          </button>
-        </div>
+      <section class="home-shop-cta-v25">
+        <span>Full catalog</span>
+        <h3>Looking for more?</h3>
+        <p>Use Shop to search every product, browse categories, filter Ready Stock or Pre-Order items, and sort by price.</p>
+        <a href="shop/">Open Shop</a>
       </section>
 
-      <section class="section deal-strip-section">
-        <div class="deal-strip">
-          <div>
-            <span class="deal-label">FLASH DEALS</span>
-            <strong>Limited-time picks</strong>
-          </div>
-          <div class="deal-timer" aria-label="Flash deal countdown">
-            <span>02</span><b>:</b><span>18</span><b>:</b><span>45</span>
-          </div>
-        </div>
+      <section class="home-value-grid-v25" aria-label="Store benefits">
+        <article class="home-value-v25"><div class="home-value-icon-v25">✦</div><b>Trending Finds</b><small>Affordable items selected for everyday use.</small></article>
+        <article class="home-value-v25"><div class="home-value-icon-v25">⌖</div><b>Order Tracking</b><small>Track your order using your reference and mobile number.</small></article>
+        <article class="home-value-v25"><div class="home-value-icon-v25">✓</div><b>Clear Checkout</b><small>Review your order and total before placing it.</small></article>
       </section>
-
-      <section class="section products-section">
-        <div class="section-heading products-heading">
-          <div>
-            <span class="section-kicker">Handpicked</span>
-            <h3>Trending Finds</h3>
-          </div>
-          <button class="link-button" type="button">See all</button>
-        </div>
-
-        <div id="productGrid" class="product-grid"></div>
-        <p id="emptyState" class="empty-state" hidden>No products found.</p>
-      </section>
+      <!-- /RM Home Discovery V25 -->
     </main>
 
     <nav class="bottom-nav" aria-label="Main navigation">
@@ -189,7 +144,7 @@
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-  <script src="js/products.js"></script>
-  <script src="js/app.js?v=14"></script>
+  <script src="js/products.js?v=25"></script>
+  <script src="js/home-v25.js?v=25"></script>
 </body>
 </html>

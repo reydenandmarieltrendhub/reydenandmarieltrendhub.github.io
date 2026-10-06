@@ -1,5 +1,6 @@
 const CART_KEY = "rmCart";
 const DRAFT_KEY = "rmCheckoutDraft";
+const PROFILE_KEY = "rmCustomerProfile";
 
 const cart = readJson(CART_KEY, []);
 let draft = readJson(DRAFT_KEY, {});
@@ -158,6 +159,13 @@ function orderItem(item) {
 }
 
 function loadDraftIntoForm() {
+  /* RM customer profile prefill v24 */
+  const profile = readJson(PROFILE_KEY, {});
+  ["fullName", "mobileNumber", "street", "barangay", "city", "province"].forEach((key) => {
+    if ((!draft[key] || !String(draft[key]).trim()) && typeof profile[key] === "string") {
+      draft[key] = profile[key];
+    }
+  });
   [...formEl.elements].forEach((control) => {
     if (!control.name || control.type === "checkbox" || control.type === "radio") return;
     if (typeof draft[control.name] === "string") control.value = draft[control.name];

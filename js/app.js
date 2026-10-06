@@ -265,3 +265,17 @@ document.addEventListener("click", (event) => {
   event.stopPropagation();
   window.location.href = new URL("cart/", document.baseURI).href;
 }, true);
+
+
+/* RM customer navigation v24 */
+document.addEventListener("click", (event) => {
+  const nav = event.target.closest?.(".bottom-nav .nav-item");
+  if (!nav) return;
+  const label = nav.getAttribute("aria-label");
+  const routes = { Shop: "shop/", Saved: "saved/", Account: "account/" };
+  const route = routes[label];
+  if (!route) return;
+  event.preventDefault();
+  event.stopPropagation();
+  window.location.href = new URL(route, document.baseURI).href;
+}, true);

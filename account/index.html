@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="../">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" />
+  <title>Account • Reyden & Mariel Trend Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=24" /><link rel="stylesheet" href="css/customer-pages-v24.css?v=24" />
+</head>
+<body class="customer-page" data-customer-page="account">
+  <div class="app-shell">
+    <header class="topbar"><div class="brand-wrap"><div class="brand-mark">R&amp;M</div><div class="brand-copy"><h1>Reyden &amp; Mariel</h1><p>TREND HUB</p></div></div><button class="icon-button" data-cart-route type="button" aria-label="Shopping cart"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.5L21 7H7"/><circle cx="10" cy="20" r="1.2"/><circle cx="18" cy="20" r="1.2"/></svg><span class="cart-badge">0</span></button></header>
+    <main class="customer-page-main">
+      <section class="customer-page-hero"><div><span>Account</span><h2>Your customer profile</h2><p>Save your usual contact and delivery details on this device for faster checkout.</p></div><div class="customer-page-count"><strong>R&amp;M</strong><small>profile</small></div></section>
+      <form id="profileForm" class="account-card">
+        <div class="account-card-heading"><span>Customer details</span><h3>Checkout profile</h3><p>This is not an online login. The information stays in this browser and is used to prefill checkout.</p></div>
+        <label class="account-field"><span>Full name</span><input name="fullName" autocomplete="name" placeholder="Your full name" /></label>
+        <label class="account-field"><span>Mobile number</span><input name="mobileNumber" type="tel" inputmode="tel" autocomplete="tel" placeholder="09XX XXX XXXX" /></label>
+        <label class="account-field"><span>House no. / Street / Purok</span><input name="street" autocomplete="address-line1" placeholder="Street / Purok" /></label>
+        <div class="account-grid"><label class="account-field"><span>Barangay</span><input name="barangay" autocomplete="address-line2" placeholder="Barangay" /></label><label class="account-field"><span>City / Municipality</span><input name="city" autocomplete="address-level2" placeholder="City / Municipality" /></label></div>
+        <label class="account-field"><span>Province</span><input name="province" autocomplete="address-level1" placeholder="Province" /></label>
+        <div class="account-actions"><button class="account-save" type="submit">Save Profile</button><button class="account-clear" id="clearProfileButton" type="button">Clear</button></div>
+        <p class="account-device-note">For privacy, this profile is stored only in this browser using local storage. Clearing browser/site data will remove it.</p>
+      </form>
+      <section class="account-card"><div class="account-card-heading"><span>Quick access</span><h3>Shopping tools</h3></div><div class="account-quick-links">
+        <a class="account-quick-link" href="track/"><span class="account-quick-icon">⌖</span><span><b>Track Order</b><small>Check an order using reference + mobile.</small></span></a>
+        <a class="account-quick-link" href="cart/"><span class="account-quick-icon">🛒</span><span><b>My Cart</b><small>Review products before checkout.</small></span></a>
+        <a class="account-quick-link" href="saved/"><span class="account-quick-icon">♡</span><span><b>Saved</b><small><span data-saved-count>0</span> saved item(s) on this device.</small></span></a>
+        <a class="account-quick-link" href="shop/"><span class="account-quick-icon">✦</span><span><b>Shop</b><small>Browse all available products.</small></span></a>
+      </div></section>
+    </main>
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a class="nav-item" href="index.html" aria-label="Home"><span class="nav-icon-wrap"><svg viewBox="0 0 24 24"><path d="m3 11 9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span><small>Home</small></a>
+      <a class="nav-item" href="shop/" aria-label="Shop"><span class="nav-icon-wrap"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></span><small>Shop</small></a>
+      <a class="nav-item" href="saved/" aria-label="Saved"><span class="nav-icon-wrap"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></span><small>Saved</small></a>
+      <a class="nav-item active" href="account/" aria-label="Account"><span class="nav-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><small>Account</small></a>
+    </nav>
+  </div>
+  <div id="customerToast" class="customer-page-toast" role="status" aria-live="polite"></div>
+  <script src="js/products.js?v=24"></script><script src="js/customer-pages-v24.js?v=24"></script>
+</body>
+</html>
