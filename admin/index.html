@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <base href="../" />
+  <title>Order Manager • Reyden & Mariel Trend Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css?v=20" />
+</head>
+<body>
+  <div class="admin-shell">
+    <header class="admin-header">
+      <div>
+        <span class="eyebrow">REYDEN & MARIEL TREND HUB</span>
+        <h1>Order Manager</h1>
+        <p>Dashboard, J&T fulfillment, customer orders and payment status</p>
+      </div>
+      <button id="logoutButton" class="header-action" type="button" hidden>Lock</button>
+    </header>
+
+    <main class="admin-main">
+      <section id="loginPanel" class="login-card">
+        <div class="lock-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        </div>
+        <span class="eyebrow">PRIVATE STORE ACCESS</span>
+        <h2>Enter Admin Key</h2>
+        <p>Use the key found in the private <strong>Store Settings</strong> tab of your Google Sheet.</p>
+        <form id="loginForm" class="login-form">
+          <label for="adminKey">Admin Key</label>
+          <div class="password-row">
+            <input id="adminKey" name="adminKey" type="password" autocomplete="off" spellcheck="false" required />
+            <button id="toggleKeyButton" type="button" class="text-control">Show</button>
+          </div>
+          <button id="loginButton" class="primary-button" type="submit">Open Order Manager</button>
+        </form>
+        <div id="setupNotice" class="notice" hidden></div>
+      </section>
+
+      <section id="dashboard" hidden>
+        <section class="dashboard-hero">
+          <div>
+            <span class="eyebrow">STORE OVERVIEW</span>
+            <h2>Dashboard</h2>
+            <p id="dashboardUpdated">Loading store totals…</p>
+          </div>
+          <button id="refreshButton" class="secondary-button" type="button">Refresh</button>
+        </section>
+
+        <section class="stats-grid" aria-label="Order dashboard summary">
+          <article class="stat-card">
+            <span class="stat-icon" aria-hidden="true">#</span>
+            <div><small>Total Orders</small><strong id="totalOrdersCount">0</strong><p>All recorded orders</p></div>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon" aria-hidden="true">●</span>
+            <div><small>Received</small><strong id="receivedCount">0</strong><p>Waiting for confirmation</p></div>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon" aria-hidden="true">◷</span>
+            <div><small>Preparing</small><strong id="preparingCount">0</strong><p>Currently being prepared</p></div>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon" aria-hidden="true">✓</span>
+            <div><small>Completed</small><strong id="completedCount">0</strong><p>Successfully fulfilled</p></div>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon" aria-hidden="true">×</span>
+            <div><small>Cancelled</small><strong id="cancelledCount">0</strong><p>Cancelled orders</p></div>
+          </article>
+          <article class="stat-card sales-card">
+            <span class="stat-icon" aria-hidden="true">₱</span>
+            <div><small>Total Sales</small><strong id="totalSalesValue">₱0</strong><p>Completed-order value</p></div>
+          </article>
+        </section>
+
+        <section class="toolbar-card">
+          <div class="toolbar-top">
+            <div>
+              <span class="eyebrow">LIVE ORDERS</span>
+              <h2>Orders</h2>
+              <p id="resultSummary">Showing latest orders</p>
+            </div>
+          </div>
+
+          <div class="filter-grid">
+            <label class="filter-field">
+              <span>Search</span>
+              <input id="searchInput" type="search" placeholder="Reference, customer, mobile, item, J&T tracking…" />
+            </label>
+            <label class="filter-field">
+              <span>Status</span>
+              <select id="statusFilter">
+                <option value="ALL">All statuses</option>
+                <option value="RECEIVED">Received</option>
+                <option value="CONFIRMED">Confirmed</option>
+                <option value="PREPARING">Preparing</option>
+                <option value="READY">Ready</option>
+                <option value="OUT_FOR_DELIVERY">Out for Delivery</option>
+                <option value="COMPLETED">Completed</option>
+                <option value="CANCELLED">Cancelled</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <div id="loadingState" class="state-card" hidden>
+          <div class="spinner" aria-hidden="true"></div>
+          <strong>Loading orders…</strong>
+        </div>
+
+        <div id="emptyState" class="state-card" hidden>
+          <strong>No matching orders</strong>
+          <p>Try another filter or wait for a new customer order.</p>
+        </div>
+
+        <section id="ordersList" class="orders-list" aria-live="polite"></section>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/store-config.js"></script>
+  <script src="js/admin.js?v=20"></script>
+</body>
+</html>

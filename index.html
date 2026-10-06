@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" />
+  <title>Reyden & Mariel Trend Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="brand-mark">R&M</div>
+        <div class="brand-copy">
+          <h1>Reyden &amp; Mariel</h1>
+          <p>TREND HUB</p>
+        </div>
+      </div>
+
+      <button class="icon-button cart-button" type="button" aria-label="Shopping cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.5L21 7H7"/>
+          <circle cx="10" cy="20" r="1.2"/>
+          <circle cx="18" cy="20" r="1.2"/>
+        </svg>
+        <span class="cart-badge">0</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">TRENDING NOW</span>
+          <h2>Affordable finds for everyday life.</h2>
+          <p>Trending finds. Sulit prices.</p>
+          <button class="hero-button" type="button">Shop New Finds</button>
+        </div>
+        <div class="hero-orb" aria-hidden="true"></div>
+      </section>
+
+
+      <!-- RM customer tracking v17 -->
+      <section class="track-order-strip-v17">
+        <div>
+          <span>Already ordered?</span>
+          <strong>Check your order status anytime.</strong>
+        </div>
+        <a href="track/">Track Order</a>
+      </section>
+
+      <section class="search-section">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.5"/>
+            <path d="m16 16 4 4"/>
+          </svg>
+          <input id="searchInput" type="search" placeholder="Search products..." aria-label="Search products" />
+        </div>
+      </section>
+
+      <section class="section category-section">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Browse</span>
+            <h3>Categories</h3>
+          </div>
+        </div>
+
+        <div class="categories" id="categoryScroller">
+          <button class="category active" data-category="all" type="button">
+            <span class="category-icon">✦</span>
+            <small>All</small>
+          </button>
+          <button class="category" data-category="fashion" type="button">
+            <span class="category-icon">👟</span>
+            <small>Fashion</small>
+          </button>
+          <button class="category" data-category="gadgets" type="button">
+            <span class="category-icon">🎧</span>
+            <small>Gadgets</small>
+          </button>
+          <button class="category" data-category="home" type="button">
+            <span class="category-icon">⌂</span>
+            <small>Home</small>
+          </button>
+          <button class="category" data-category="beauty" type="button">
+            <span class="category-icon">✿</span>
+            <small>Beauty</small>
+          </button>
+          <button class="category" data-category="accessories" type="button">
+            <span class="category-icon">👜</span>
+            <small>Accessories</small>
+          </button>
+        </div>
+      </section>
+
+      <section class="section deal-strip-section">
+        <div class="deal-strip">
+          <div>
+            <span class="deal-label">FLASH DEALS</span>
+            <strong>Limited-time picks</strong>
+          </div>
+          <div class="deal-timer" aria-label="Flash deal countdown">
+            <span>02</span><b>:</b><span>18</span><b>:</b><span>45</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section products-section">
+        <div class="section-heading products-heading">
+          <div>
+            <span class="section-kicker">Handpicked</span>
+            <h3>Trending Finds</h3>
+          </div>
+          <button class="link-button" type="button">See all</button>
+        </div>
+
+        <div id="productGrid" class="product-grid"></div>
+        <p id="emptyState" class="empty-state" hidden>No products found.</p>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <button class="nav-item active" type="button" aria-label="Home">
+        <span class="nav-icon-wrap">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m3 11 9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>
+          </svg>
+        </span>
+        <small>Home</small>
+      </button>
+      <button class="nav-item" type="button" aria-label="Shop">
+        <span class="nav-icon-wrap">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="4" y="4" width="6" height="6" rx="1"/>
+            <rect x="14" y="4" width="6" height="6" rx="1"/>
+            <rect x="4" y="14" width="6" height="6" rx="1"/>
+            <rect x="14" y="14" width="6" height="6" rx="1"/>
+          </svg>
+        </span>
+        <small>Shop</small>
+      </button>
+      <button class="nav-item" type="button" aria-label="Saved">
+        <span class="nav-icon-wrap">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/>
+          </svg>
+        </span>
+        <small>Saved</small>
+      </button>
+      <button class="nav-item" type="button" aria-label="Account">
+        <span class="nav-icon-wrap">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21a8 8 0 0 1 16 0"/>
+          </svg>
+        </span>
+        <small>Account</small>
+      </button>
+    </nav>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js?v=14"></script>
+</body>
+</html>

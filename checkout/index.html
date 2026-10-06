@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="../">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" />
+  <title>Checkout • Reyden & Mariel Trend Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/checkout.css?v=22" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="checkout-header">
+      <button class="header-icon" id="backButton" type="button" aria-label="Back to cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="header-title"><h1>Checkout</h1><p>Delivery & payment</p></div>
+      <div class="header-lock" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+      </div>
+    </header>
+
+    <main class="checkout-main">
+      <section id="checkoutContent">
+        <div class="progress-row" aria-label="Checkout progress">
+          <span class="progress-step done">Cart</span><span class="progress-line"></span>
+          <span class="progress-step active">Details</span><span class="progress-line"></span>
+          <span class="progress-step">Review</span>
+        </div>
+
+        <form id="checkoutForm" novalidate>
+          <section class="checkout-card">
+            <div class="card-heading">
+              <div class="heading-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+              <div><span class="eyebrow">CUSTOMER</span><h2>Contact information</h2></div>
+            </div>
+            <label class="field"><span>Full name</span><input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="Enter your full name" required /><small class="field-error">Please enter your full name.</small></label>
+            <label class="field"><span>Mobile number</span><input id="mobileNumber" name="mobileNumber" type="tel" inputmode="tel" autocomplete="tel" placeholder="09XX XXX XXXX" required /><small class="field-error">Please enter your mobile number.</small></label>
+          </section>
+
+          <section class="checkout-card">
+            <div class="card-heading">
+              <div class="heading-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+              <div><span class="eyebrow">DELIVERY</span><h2>Delivery address</h2></div>
+            </div>
+            <label class="field"><span>House no. / Street / Purok</span><input id="street" name="street" type="text" autocomplete="address-line1" placeholder="e.g. Purok 2, Rizal Street" required /><small class="field-error">Please enter your street or purok.</small></label>
+            <div class="field-grid">
+              <label class="field"><span>Barangay</span><input id="barangay" name="barangay" type="text" autocomplete="address-line2" placeholder="Barangay" required /><small class="field-error">Required.</small></label>
+              <label class="field"><span>City / Municipality</span><input id="city" name="city" type="text" autocomplete="address-level2" placeholder="City / Municipality" required /><small class="field-error">Required.</small></label>
+            </div>
+            <label class="field"><span>Province</span><input id="province" name="province" type="text" autocomplete="address-level1" placeholder="Province" required /><small class="field-error">Please enter your province.</small></label>
+            <label class="field"><span>Delivery notes <em>Optional</em></span><textarea id="deliveryNotes" name="deliveryNotes" rows="3" placeholder="Landmark, preferred contact instructions, etc."></textarea></label>
+          </section>
+
+          <section class="checkout-card" id="paymentCard">
+            <div class="card-heading">
+              <div class="heading-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M16 15h2"/></svg></div>
+              <div><span class="eyebrow">PAYMENT</span><h2>Choose payment method</h2></div>
+            </div>
+            <div id="paymentLoading" class="config-loading">Loading payment options…</div>
+            <div id="paymentOptions" class="payment-options" hidden></div>
+            <div id="gotymeQrPanel" class="gotyme-qr-panel" hidden>
+              <div class="gotyme-qr-copy">
+                <span class="gotyme-bank-label">GOTYME BANK • INSTAPAY QR</span>
+                <strong id="gotymeAccountName">REYDEN ALBARICO</strong>
+                <small id="gotymeAccountHint">Account ending in 4507</small>
+                <p id="gotymeInstructions">Scan the QR using a bank or e-wallet that supports InstaPay.</p>
+              </div>
+              <img src="assets/images/gotyme-instapay-qr.jpg" alt="GoTyme Bank InstaPay QR for Reyden Albarico" class="gotyme-qr-image" />
+              <p class="gotyme-security-note">Check the recipient name before sending. Transfer fees may apply.</p>
+            </div>
+            <div id="paymentError" class="payment-error" hidden>Please choose a payment method.</div>
+          </section>
+
+          <section class="checkout-card compact-card">
+            <div class="card-heading">
+              <div class="heading-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v10H3z"/><path d="M7 12h4"/></svg></div>
+              <div><span class="eyebrow">DELIVERY FEE</span><h2>Automatic total</h2></div>
+            </div>
+            <div class="info-row"><div><strong>Delivery / shipping fee</strong><span id="deliveryRuleText">Loading store delivery rule…</span></div><b id="deliveryFeeValue">—</b></div>
+            <div id="freeDeliveryNotice" class="free-delivery-notice" hidden></div>
+          </section>
+
+          <section class="checkout-card">
+            <div class="card-heading order-heading"><div><span class="eyebrow">YOUR ORDER</span><h2>Order summary</h2></div><button id="editCartButton" class="text-button" type="button">Edit cart</button></div>
+            <div id="orderItems" class="order-items"></div>
+            <div class="totals">
+              <div class="total-row"><span>Subtotal</span><strong id="subtotalValue">₱0</strong></div>
+              <div class="total-row muted"><span>Delivery / shipping fee</span><span id="summaryDeliveryFee">—</span></div>
+              <div class="total-row grand-total"><span>Total</span><strong id="totalValue">₱0</strong></div>
+            </div>
+            <div id="preorderNotice" class="preorder-notice" hidden><div class="notice-icon">!</div><div><strong>Pre-order item included</strong><p>Availability and fulfillment schedule will be confirmed before final payment.</p></div></div>
+            <label id="preorderAgreement" class="agreement" hidden><input id="preorderCheckbox" type="checkbox" /><span>I understand that pre-order availability and fulfillment schedule still need confirmation.</span></label>
+          </section>
+        </form>
+      </section>
+
+      <section id="emptyState" class="empty-state" hidden>
+        <div class="empty-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.5L21 7H7"/><circle cx="10" cy="20" r="1.2"/><circle cx="18" cy="20" r="1.2"/></svg></div>
+        <h2>Your cart is empty</h2><p>Add an item before continuing to checkout.</p><button id="shopButton" class="primary-button" type="button">Continue Shopping</button>
+      </section>
+    </main>
+
+    <div id="bottomBar" class="bottom-bar">
+      <div class="bar-total"><small>Total</small><strong id="stickyTotal">₱0</strong></div>
+      <button id="reviewButton" class="review-button" type="button" disabled>Continue to Review<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/store-config.js"></script>
+  <script src="js/checkout.js?v=20"></script>
+</body>
+</html>

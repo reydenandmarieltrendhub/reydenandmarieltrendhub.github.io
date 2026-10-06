@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="../">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" />
+  <title>My Cart • Reyden & Mariel Trend Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/cart.css?v=22" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="cart-header">
+      <button class="header-icon" id="backButton" type="button" aria-label="Back">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+
+      <div class="header-title">
+        <h1>My Cart</h1>
+        <p id="cartCountLabel">0 items</p>
+      </div>
+
+      <button class="header-icon" id="clearCartButton" type="button" aria-label="Clear cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 6h18"/>
+          <path d="M8 6V4h8v2"/>
+          <path d="M19 6l-1 14H6L5 6"/>
+          <path d="M10 10v6M14 10v6"/>
+        </svg>
+      </button>
+    </header>
+
+    <main class="cart-main">
+      <section id="cartContent">
+        <div id="cartItems" class="cart-items"></div>
+
+        <section id="orderSummary" class="summary-card">
+          <div class="summary-heading">
+            <div>
+              <span class="eyebrow">ORDER SUMMARY</span>
+              <h2>Cart total</h2>
+            </div>
+          </div>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <strong id="subtotalValue">₱0</strong>
+          </div>
+
+          <div class="summary-row muted">
+            <span>Delivery fee</span>
+            <span>Calculated at checkout</span>
+          </div>
+
+          <div class="summary-row total">
+            <span>Estimated total</span>
+            <strong id="totalValue">₱0</strong>
+          </div>
+
+          <div id="preorderNotice" class="preorder-notice" hidden>
+            <div class="notice-icon">!</div>
+            <div>
+              <strong>Pre-order item included</strong>
+              <p>Availability and fulfillment schedule will be confirmed before final payment.</p>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section id="emptyCart" class="empty-cart" hidden>
+        <div class="empty-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.5L21 7H7"/>
+            <circle cx="10" cy="20" r="1.2"/>
+            <circle cx="18" cy="20" r="1.2"/>
+          </svg>
+        </div>
+        <h2>Your cart is empty</h2>
+        <p>Add a trending find and it will appear here.</p>
+        <button id="continueShoppingButton" class="primary-button" type="button">
+          Continue Shopping
+        </button>
+      </section>
+    </main>
+
+    <div id="checkoutBar" class="checkout-bar">
+      <div class="checkout-total">
+        <small>Total</small>
+        <strong id="stickyTotal">₱0</strong>
+      </div>
+      <button id="checkoutButton" class="checkout-button" type="button">
+        Proceed to Checkout
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js?v=10"></script>
+</body>
+</html>

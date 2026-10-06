@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="../">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" />
+  <title>Track Order • Reyden & Mariel Trend Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/track.css?v=20" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="track-header">
+      <a class="header-icon" href="index.html" aria-label="Back to store">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </a>
+      <div class="header-title">
+        <h1>Track Order</h1>
+        <p>Reyden &amp; Mariel Trend Hub</p>
+      </div>
+      <div class="header-package" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg>
+      </div>
+    </header>
+
+    <main class="track-main">
+      <section class="intro-card">
+        <span class="eyebrow">ORDER STATUS</span>
+        <h2>Where is my order?</h2>
+        <p>Enter your order reference and the mobile number used at checkout.</p>
+
+        <form id="trackForm" class="track-form" novalidate>
+          <label class="field">
+            <span>Order reference</span>
+            <input id="referenceInput" name="reference" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" placeholder="RM-20261006-..." maxlength="80" required />
+          </label>
+
+          <label class="field">
+            <span>Mobile number</span>
+            <input id="mobileInput" name="mobile" type="tel" inputmode="tel" autocomplete="tel" placeholder="09XX XXX XXXX" maxlength="30" required />
+          </label>
+
+          <button id="trackButton" class="primary-button" type="submit">
+            <span>Track My Order</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </form>
+
+        <div class="privacy-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2"/><rect x="5" y="10" width="14" height="11" rx="2"/></svg>
+          <p>For privacy, both details must match the order. Your delivery address and internal store notes are never shown here.</p>
+        </div>
+      </section>
+
+      <section id="resultPanel" class="result-card" hidden>
+        <div class="result-head">
+          <div>
+            <span class="eyebrow">ORDER REFERENCE</span>
+            <h2 id="resultReference">—</h2>
+            <p id="resultCustomer">—</p>
+          </div>
+          <span id="statusBadge" class="status-badge">Received</span>
+        </div>
+
+        <div id="cancelledNotice" class="cancelled-notice" hidden>
+          <strong>This order was cancelled.</strong>
+          <p>If you believe this is a mistake, please contact the store and provide your order reference.</p>
+        </div>
+
+        <div id="progressWrap" class="progress-wrap">
+          <div id="progressSteps" class="progress-steps" aria-label="Order progress"></div>
+        </div>
+
+        <div class="update-card">
+          <span>Latest update</span>
+          <strong id="latestUpdate">—</strong>
+          <p id="statusMessage">—</p>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-heading">
+            <div>
+              <span class="eyebrow">ORDER SUMMARY</span>
+              <h3>Your order</h3>
+            </div>
+            <span id="preorderBadge" class="preorder-badge" hidden>PRE-ORDER</span>
+          </div>
+
+          <div class="summary-row items-row">
+            <span>Items</span>
+            <p id="itemsValue">—</p>
+          </div>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <strong id="subtotalValue">—</strong>
+          </div>
+          <div class="summary-row">
+            <span>Delivery fee</span>
+            <strong id="deliveryFeeValue">—</strong>
+          </div>
+          <div class="summary-row">
+            <span>Payment</span>
+            <strong id="paymentValue">—</strong>
+          </div>
+          <div id="shippingInfo">
+            <div class="summary-row">
+              <span>Courier</span>
+              <strong id="courierValue">—</strong>
+            </div>
+            <div class="summary-row">
+              <span>J&T tracking no.</span>
+              <strong id="trackingValue">Not assigned</strong>
+            </div>
+            <div class="summary-row">
+              <span>Shipment status</span>
+              <strong id="shipmentValue">Not booked</strong>
+            </div>
+            <div class="summary-row">
+              <span>Payment status</span>
+              <strong id="paymentStatusValue">—</strong>
+            </div>
+          </div>
+          <div class="summary-row total-row">
+            <span>Estimated total</span>
+            <strong id="totalValue">—</strong>
+          </div>
+        </div>
+
+        <div class="result-actions">
+          <button id="refreshButton" class="secondary-button" type="button">Refresh Status</button>
+          <a class="store-button" href="index.html">Back to Store</a>
+        </div>
+      </section>
+
+      <section id="notFoundPanel" class="state-card" hidden>
+        <div class="state-icon">?</div>
+        <h2>Order not found</h2>
+        <p>Check the order reference and mobile number, then try again. Use the same mobile number you entered during checkout.</p>
+      </section>
+
+      <section id="errorPanel" class="state-card error" hidden>
+        <div class="state-icon">!</div>
+        <h2>Tracking is temporarily unavailable</h2>
+        <p id="errorMessage">We couldn't reach the order receiver. Please try again in a moment.</p>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/store-config.js"></script>
+  <script src="js/track.js?v=20"></script>
+</body>
+</html>

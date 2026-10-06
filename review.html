@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" />
+  <title>Review Order • Reyden & Mariel Trend Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/review.css?v=20" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="review-header">
+      <button class="header-icon" id="backButton" type="button" aria-label="Back to checkout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="header-title"><h1>Review Order</h1><p>Check before confirming</p></div>
+      <div class="header-shield" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.7 2.8 8.2 7 10 4.2-1.8 7-5.3 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+    </header>
+
+    <main class="review-main">
+      <section id="reviewContent">
+        <div class="progress-row" aria-label="Checkout progress"><span class="progress-step done">Cart</span><span class="progress-line done"></span><span class="progress-step done">Details</span><span class="progress-line done"></span><span class="progress-step active">Review</span></div>
+        <div class="review-grid">
+          <section class="review-card">
+            <div class="card-heading"><div><span class="eyebrow">CUSTOMER & DELIVERY</span><h2>Order information</h2></div><button id="editDetailsButton" class="text-button" type="button">Edit</button></div>
+            <div class="detail-block"><span class="detail-label">Customer</span><strong id="customerName">—</strong><p id="customerMobile">—</p></div>
+            <div class="detail-block"><span class="detail-label">Delivery address</span><strong id="deliveryAddress">—</strong><p id="deliveryNotes" hidden></p></div>
+          </section>
+
+          <section class="review-card">
+            <div class="card-heading"><div><span class="eyebrow">YOUR ORDER</span><h2>Items</h2></div><button id="editCartButton" class="text-button" type="button">Edit cart</button></div>
+            <div id="orderItems" class="order-items"></div>
+            <div class="totals">
+              <div class="total-row"><span>Subtotal</span><strong id="subtotalValue">₱0</strong></div>
+              <div class="total-row muted"><span>Delivery / shipping fee</span><span id="summaryDeliveryFee">—</span></div>
+              <div class="total-row grand-total"><span>Total</span><strong id="totalValue">₱0</strong></div>
+            </div>
+            <div id="preorderNotice" class="preorder-notice" hidden><div class="notice-icon">!</div><div><strong>Pre-order item included</strong><p>Availability and fulfillment schedule will still be confirmed before final payment.</p></div></div>
+          </section>
+
+          <section class="review-card compact-card">
+            <span class="eyebrow">PAYMENT & DELIVERY</span><h2>Checkout selection</h2>
+            <div class="info-row"><div><strong>Delivery / shipping fee</strong><span id="deliveryRuleText">Store shipping rule</span></div><b id="reviewDeliveryFee">—</b></div>
+            <div class="info-row"><div><strong>Payment method</strong><span id="reviewPaymentDetail">Selected at checkout</span></div><b id="reviewPaymentMethod">—</b></div>
+            <div id="reviewGotymeQr" class="review-gotyme-qr" hidden>
+              <div>
+                <span class="gotyme-bank-label">GOTYME BANK • INSTAPAY QR</span>
+                <strong id="reviewGotymeName">REYDEN ALBARICO</strong>
+                <small id="reviewGotymeHint">Account ending in 4507</small>
+                <p id="reviewGotymeInstructions">Scan the QR using a bank or e-wallet that supports InstaPay.</p>
+              </div>
+              <img src="assets/images/gotyme-instapay-qr.jpg" alt="GoTyme Bank InstaPay QR for Reyden Albarico" />
+              <small class="gotyme-security-note">Check the recipient name before sending. Transfer fees may apply.</small>
+            </div>
+          </section>
+
+          <div id="connectionNotice" class="final-note"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><p>Checking online order receiver and checkout settings…</p></div>
+        </div>
+      </section>
+
+      <section id="missingState" class="empty-state" hidden>
+        <div class="empty-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.5L21 7H7"/><circle cx="10" cy="20" r="1.2"/><circle cx="18" cy="20" r="1.2"/></svg></div>
+        <h2>Nothing to review</h2><p>Your cart or checkout details are missing. Return to the shop and try again.</p><button id="shopButton" class="primary-button" type="button">Continue Shopping</button>
+      </section>
+
+      <section id="successState" class="success-state" hidden>
+        <div class="success-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <span class="success-eyebrow">ORDER RECEIVED</span><h2>Order received!</h2><p>Your order reference is:</p><div id="orderReference" class="order-reference">RM-000000</div>
+        <div id="successMessage" class="success-message">Your order was received by Reyden & Mariel Trend Hub. Keep your order reference so you can track the order.</div>
+        <div class="success-actions"><button id="copyOrderButton" class="secondary-button" type="button">Copy Order Details</button><button id="continueButton" class="primary-button" type="button">Continue Shopping</button></div>
+      </section>
+    </main>
+
+    <div id="bottomBar" class="bottom-bar"><div class="bar-total"><small>Total</small><strong id="stickyTotal">₱0</strong></div><button id="confirmButton" class="confirm-button" type="button" disabled><span>Place Order</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></button></div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/store-config.js"></script>
+  <script src="js/review.js?v=20"></script>
+</body>
+</html>

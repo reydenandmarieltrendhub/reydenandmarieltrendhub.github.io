@@ -1,0 +1,12 @@
+# Private/development files
+apps-script/
+Code-v*.txt
+*.zip
+.env
+.env.*
+install-v*.sh
+
+# Local backups
+.*backup*
+.jnt-cod-backup-*
+.route-fix-backup-*
